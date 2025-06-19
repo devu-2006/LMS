@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./components/ui/dropdown-menu.jsx";
 import { Moon, Sun } from "lucide-react";
 import React from "react";
 
-const Darkmode = () => {
+const DarkMode = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -25,7 +25,7 @@ const Darkmode = () => {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 };
 
-export default Darkmode;
+export default DarkMode;

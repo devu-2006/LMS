@@ -20,6 +20,7 @@ import {
 } from "@/features/api/authApi";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loginInput, setLoginInput] = useState({ email: "", password: "" });
@@ -47,6 +48,7 @@ const Login = () => {
       isSuccess: loginIsSuccess,
     },
   ] = useLoginUserMutation();
+  const navigate= useNavigate();
   const changeInputHandler = (e, type) => {
     const { name, value } = e.target;
     if (type === "signup") {
@@ -62,26 +64,31 @@ const Login = () => {
     await action(inputData);
   };
   useEffect(() => {
-    if(registerIsSuccess && registerData){
-      toast.success(registerData.message || "Signup successful.");
-    }
-    if(registerError){
-      toast.error(registerData.data.message || "Signup failed!");
-    }
-    if(loginIsSuccess && loginData){
-      toast.success(loginData.message || "Login successful.")
-    }
-    if(loginError){
-      toast.error(loginData.data.message || "Login failed!");
-    }
-  }, [
-    loginIsLoading,
-    registerIsLoading,
-    loginData,
-    registerData,
-    loginError,
-    registerError,
-  ]);
+  if (registerIsSuccess && registerData) {
+    toast.success(registerData.message || "Signup successful.");
+  }
+
+  if (registerError) {
+    toast.error(registerError?.data?.message || "Signup failed!");
+  }
+
+  if (loginIsSuccess && loginData) {
+    toast.success(loginData.message || "Login successful.");
+    navigate("/");
+  }
+
+  if (loginError) {
+    toast.error(loginError?.data?.message || "Login failed!");
+  }
+}, [
+  loginIsLoading,
+  registerIsLoading,
+  loginData,
+  registerData,
+  loginError,
+  registerError,
+]);
+
   return (
     <div className="flex items-center w-full justify-center mt-20">
       <Tabs defaultValue="account" className="w-[400px]">
