@@ -6,6 +6,8 @@ import Navbar from './components/Navbar'
 import HeroSection from './pages/student/HeroSection.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import MainLayout from './layout/MainLayout.jsx'
+import Courses from './pages/student/Courses.jsx'
+import {MyLearning, Profile} from './pages/student/MyLearning.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -17,13 +19,21 @@ const appRouter = createBrowserRouter([
         element:(
         <>
         <HeroSection/>
-        {/* {Courses} */}
+        <Courses/>
         </>
         ),
       },
       {
         path:"login",
         element:<Login/>
+      },
+      {
+        path:"my-learning",
+        element:<MyLearning/>
+      },
+      {
+        path:"profile",
+        element:<Profile/>
       }
     ],
   },
