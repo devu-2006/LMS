@@ -6,7 +6,6 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 dotenv.config({});
-
 connectDB();
 const app=express();
 
