@@ -37,9 +37,10 @@ The LMS Portal is designed to simplify online education by providing:
 
 | Category       | Tools Used                             |
 |----------------|----------------------------------------|
-| Frontend       | HTML, CSS, JavaScript, Bootstrap       |
-| Backend        | Node.js + Express / Django / Flask     |
-| Database       | MongoDB / MySQL / PostgreSQL           |
+| Frontend       | HTML, CSS, JavaScript, React           |
+| Backend        | Node.js + Express                      |
+| Database       | MongoDB / MySQL                        |
 | Authentication | JWT / Passport / OAuth2                |
-| File Storage   | Local / Cloudinary / AWS S3            |
-| Deployment     | Render / Vercel / Heroku / Netlify     |
+| File Storage   | Local / Cloudinary                     |
+| Deployment     | Vercel                                 |
+Will be deployed soon ...
